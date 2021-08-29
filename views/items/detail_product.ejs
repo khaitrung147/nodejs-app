@@ -1,0 +1,48 @@
+<section>
+    <div class="container">
+        <input type="text" id="id" hidden value="<%= id %>" />
+        <span class="path"><a href="/">Trang chủ</a> / <%= title %> </span>
+        <div class="detail_product">
+            <div class="detail-img">
+                <div class="main-img" id="img"></div>
+                <div class="choice-img"></div>
+            </div>
+            <div class="info-detail">
+                <h2 id="name"></h2>
+                <p class="des">Mô tả đang cập nhật</p>
+                <p class="price-detail">Giá: <span id="price"></span></p>
+                <div class="quantity">
+                    <label for="">Số lượng: </label>
+                    <div class="qtt_input">
+                        <input type="button" value="-" class="minus" onclick="minus()" />
+                        <input id="quantity" readonly type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" size="4" pattern="" inputmode="" />
+                        <input type="button" value="+" class="plus" onclick="plus()" />
+                        <script>
+                            var quantity = document.querySelector("#quantity").value;
+
+                            function plus() {
+                                quantity++;
+                                document.querySelector("#quantity").value = quantity;
+                            }
+
+                            function minus() {
+                                if (quantity > 1) {
+                                    quantity--;
+                                    document.querySelector("#quantity").value = quantity;
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="add_cart">
+                    <a href="" type="button" class="add_to" onclick="add_to_cart()">Thêm vào giỏ hàng</a
+          >
+          <a href="" class="add_to buy_now" id="buy_now">Mua ngay</a>
+                </div>
+                <p><strong>Giao hàng miễn phí:</strong> Áp dụng đơn hàng > 200.000đ</p>
+                <p><strong>Thanh toán tại nhà:</strong> Nhanh chóng và an toàn</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="../javascripts/detail_product.js"></script>

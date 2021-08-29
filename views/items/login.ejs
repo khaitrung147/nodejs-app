@@ -1,0 +1,45 @@
+<section>
+    <div class="login">
+        <h1>Đăng nhập</h1>
+        <p>
+            Nếu bạn chưa có tài khoản,
+            <a href="register.html">đăng kí tại đây</a>
+        </p>
+        <form action="/users/dang-nhap" method="post">
+            <div class="form-group">
+                <input id="email" type="email" name="email" placeholder="Email" />
+            </div>
+            <div class="form-group">
+                <input type="password" name="matkhau" placeholder="Mật khẩu" />
+            </div>
+            <div class="form-group">
+                <button type="submit" onclick="add_user()">Đăng nhập</button>
+            </div>
+        </form>
+        <p><a href="">Quên mật khẩu ?</a></p>
+        <div class="login-social">
+            <p>Hoặc đăng nhập bằng</p>
+            <a href="" class="fb"><i
+          class="fab fa-facebook"
+          style="font-size: 25px"
+          aria-hidden="true"
+        ></i>
+        Facebook</a
+      >
+      <a href="" class="gg"
+        ><i
+          class="fab fa-google-plus"
+          style="font-size: 25px"
+          aria-hidden="true"
+        ></i>
+        Google</a
+      >
+    </div>
+  </div>
+</section>
+<script>
+  function add_user() {
+    var email = document.querySelector("#email").value;
+    sessionStorage.user = email;
+  }
+</script>

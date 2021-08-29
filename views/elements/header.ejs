@@ -1,0 +1,45 @@
+<header class="bg-main">
+    <div class="container d-flex">
+        <div class="hotline">
+            <img src="../images/i_phone.png" alt="" /> Hotline:
+            <a href="#"> 0929441157</a>
+        </div>
+        <nav class="line">
+            <ul>
+                <li>
+                    <img src="../images/i_search.png" alt="" /><a href=""> Tìm kiếm</a>
+                </li>
+                <li class="dropdown">
+                    <img src="../images/i_user.png" alt="" /><a href="" id="user">
+            Tài khoản</a
+          >
+          <ul class="dropdown-nav">
+            <li class="dropdown-li">
+              <a href="/users/dang-nhap">Đăng nhập</a>
+                </li>
+                <li class="dropdown-li"><a href="/users/dang-ki">Đăng kí</a></li>
+            </ul>
+            </li>
+            <li>
+                <img src="../images/i_cart (1).png" alt="" /><a href="/gio-hang">
+            Giỏ hàng (<span id="length_cart"></span>)</a
+          >
+        </li>
+      </ul>
+      <script>
+        var items = JSON.parse(sessionStorage.getItem("cart_items"));
+        var i = 0;
+        if (!sessionStorage.getItem("cart_items")) {
+          i = 0;
+        } else {
+          items.forEach((e) => {
+            i = i + Number(e.soluong);
+          });
+        }
+        document.querySelector("#length_cart").innerHTML = i;
+
+        // document.querySelector("#user").innerHTML = user;
+      </script>
+    </nav>
+  </div>
+</header>

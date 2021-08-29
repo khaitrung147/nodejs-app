@@ -1,0 +1,243 @@
+<div class="breadcrumbs">
+    <div class="col-sm-4">
+        <div class="page-header float-left">
+            <div class="page-title">
+                <h1>Sản phẩm</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="page-header float-right">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li class="active">Danh sách</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Dữ liệu</strong>
+                    </div>
+                    <div class="card-body">
+                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Hình ảnh</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Loại sản phẩm</th>
+                                    <th>Giá sản phẩm</th>
+                                    <th>Ẩn/hiện</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="products_data">
+                                <!-- <tr>
+                                    <td>
+                                        <input type="checkbox" name="checkbox" id="" value="" />
+                                    </td>
+                                    <th>Hình ảnh</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Loại sản phẩm</th>
+                                    <th>Giá sản phẩm</th>
+                                    <td>Ẩn/ hiện</td>
+                                    <td>
+                                        <a type="button" class="btn btn-dark" href="/admin/catalogs/edit/">Chỉnh sửa</a
+                    >
+                    <a
+                      type="button"
+                      class="btn btn-dark"
+                      href="/admin/catalogs/delete/"
+                      onclick="return canhbao('Bạn có thực sự muốn xóa !')"
+                      >Xóa</a
+                    >
+                  </td>
+                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .animated -->
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Chỉnh sửa</h4>
+                <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Tên sản phẩm</label>
+                        <input name="name" type="name" class="form-control" id="ten_sanpham" aria-describedby="" placeholder="Nhập tên loại sản phẩm" />
+                        <small id="name" class="form-text text-muted">Mã sản phẩm này sẽ được tự động khởi tạo</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="link_img">Link hình sản phẩm</label>
+            <input
+              name="link_img"
+              type="link_img"
+              class="form-control"
+              id="hinh_sanpham"
+              aria-describedby=""
+              placeholder="Nhập link hình sản phẩm"
+            />
+          </div>
+          <div class="form-group">
+            <label for="cata">Loại sản phẩm</label>
+            <select class="form-control" name="cata" id="id_loaisp">
+              <option value="1">Cà phê</option>
+              <option value="2">Bánh Ngọt</option>
+              <option value="3">Smoothies</option>
+              <option value="4">Trà hoa quả</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="price">Giá sản phẩm</label>
+            <input
+              type="text"
+              name="price"
+              class="form-control"
+              id="gia_sanpham"
+              placeholder="Nhập giá sản phẩm"
+            />
+          </div>
+          <div class="form-group">
+            <label for="showHide">Ẩn/ Hiện</label>
+            <select class="form-control" name="showHide" id="an_hien">
+              <option value="1" selected>Hiện</option>
+              <option value="0">Ẩn</option>
+            </select>
+          </div>
+          <button type="button" id="btn_edit" class="btn btn-primary">
+            Chỉnh sửa
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Đóng
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var products;
+
+  function getProducts() {
+    axios
+      .get("/products")
+      .then((res) => {
+        let str = "";
+        products = res.data;
+        products.forEach((e) => {
+          str += `
+          <tr>
+                                    <td>
+                                        <input type="checkbox" name="checkbox" id="pro_${
+                                          e.id_sanpham
+                                        }" value="${e.id_sanpham}" />
+                                    </td>
+                                    <td><img src="${
+                                      e.hinh_sanpham
+                                    }" style="width: 70px" > </td>
+                                    <td>${e.ten_sanpham}</td>
+                                    <td>${e.id_loaisp}</td>
+                                    <td>${e.gia_sanpham}</td>
+                                    <td>${e.an_hien == 0 ? "Ẩn" : "Hiện"}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal" onclick="chinhsua(${
+                                          e.id_sanpham
+                                        })">Chỉnh sửa</button>
+                    
+                    <button
+                      type="submit"
+                      class="btn btn-dark"
+                      href="/admin/catalogs/delete/"
+                      onclick="xoa(${e.id_sanpham})"
+                      >Xóa</button
+                    >
+                  </td>
+                </tr>
+          `;
+        });
+        document.querySelector("#products_data").innerHTML = str;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  getProducts();
+
+  function xoa(id) {
+    axios
+      .delete(`/products/delete/${id}`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    window.location.href = "/admin/san-pham";
+  }
+
+  function chinhsua(id) {
+    var result = products.filter((item) => {
+      return item.id_sanpham == id;
+    });
+
+    result.forEach((e) => {
+      document.querySelector("#ten_sanpham").value = e.ten_sanpham;
+      document.querySelector("#hinh_sanpham").value = e.hinh_sanpham;
+      document.querySelector("#gia_sanpham").value = e.gia_sanpham;
+      document.querySelector("#an_hien").value = e.an_hien;
+      var func = document.createAttribute("onclick");
+      func.value = `edit(${e.id_sanpham})`;
+      document.querySelector("#btn_edit").setAttributeNode(func);
+    });
+  }
+
+  function edit(id) {
+    let ten_sanpham = document.querySelector("#ten_sanpham").value;
+    let hinh_sanpham = document.querySelector("#hinh_sanpham").value;
+    let id_loaisp = document.querySelector("#id_loaisp").value;
+    let gia_sanpham = document.querySelector("#gia_sanpham").value;
+    let an_hien = document.querySelector("#an_hien").value;
+    let data = {
+      id_loaisp: id_loaisp,
+      hinh_sanpham: hinh_sanpham,
+      ten_sanpham: ten_sanpham,
+      gia_sanpham: gia_sanpham,
+      an_hien: an_hien,
+    };
+
+    axios
+      .put(`/products/${id}`, data)
+      .then((res) => {})
+      .catch((err) => {
+        console.log(err);
+      });
+    alert("Chỉnh sửa thành công !");
+    window.location.href = "/admin/san-pham";
+  }
+</script>
+<!-- .content -->

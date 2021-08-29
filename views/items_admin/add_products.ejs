@@ -1,0 +1,152 @@
+<div class="breadcrumbs">
+    <div class="col-sm-4">
+        <div class="page-header float-left">
+            <div class="page-title">
+                <h1>Sản phẩm</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="page-header float-right">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li class="active">Thêm mới</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Biểu mẫu</strong>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Tên sản phẩm</label>
+                                <input name="name" type="name" class="form-control" id="ten_sanpham" aria-describedby="" placeholder="Nhập tên loại sản phẩm" />
+                                <small id="name" class="form-text text-muted">Mã sản phẩm này sẽ được tự động khởi tạo</small
+                >
+              </div>
+              <div id="vali_name" class="invalid-feedback"></div>
+
+              <div class="form-group">
+                <label for="link_img">Link hình sản phẩm</label>
+                <input
+                  name="link_img"
+                  type="link_img"
+                  class="form-control"
+                  id="hinh_sanpham"
+                  aria-describedby=""
+                  placeholder="Nhập link hình sản phẩm"
+                />
+              </div>
+              <div id="vali_img" class="invalid-feedback"></div>
+
+              <div class="form-group">
+                <label for="cata">Loại sản phẩm</label>
+                <select class="form-control" name="cata" id="id_loaisp">
+                  <option value="1">Cà phê</option>
+                  <option value="2">Bánh Ngọt</option>
+                  <option value="3">Smoothies</option>
+                  <option value="4">Trà hoa quả</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="price">Giá sản phẩm</label>
+                <input
+                  type="text"
+                  name="price"
+                  class="form-control"
+                  id="gia_sanpham"
+                  placeholder="Nhập giá sản phẩm"
+                />
+              </div>
+              <div id="vali_price" class="invalid-feedback"></div>
+
+              <div class="form-group">
+                <label for="showHide">Ẩn/ Hiện</label>
+                <select class="form-control" name="showHide" id="an_hien">
+                  <option value="1" selected>Hiện</option>
+                  <option value="0">Ẩn</option>
+                </select>
+              </div>
+              <button type="button" id="btn" class="btn btn-primary">
+                Thêm
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- .animated -->
+</div>
+<script>
+  var btn = document.querySelector("#btn");
+  btn.addEventListener("click", () => {
+    let ten_sanpham = document.getElementById("ten_sanpham");
+    let hinh_sanpham = document.getElementById("hinh_sanpham");
+    let id_loaisp = document.getElementById("id_loaisp");
+    let gia_sanpham = document.getElementById("gia_sanpham");
+    let an_hien = document.getElementById("an_hien");
+    let data = {
+      ten_sanpham: ten_sanpham.value,
+      hinh_sanpham: hinh_sanpham.value,
+      id_loaisp: id_loaisp.value,
+      gia_sanpham: gia_sanpham.value,
+      an_hien: an_hien.value,
+    };
+    var i;
+    if (!ten_sanpham.value) {
+      document.querySelector("#vali_name").innerHTML =
+        "Vui lòng điền vào trường này";
+      document.getElementById("vali_name").style.display = "block";
+      i = false;
+    } else {
+      document.getElementById("vali_name").style.display = "none";
+      i = true;
+    }
+
+    if (!hinh_sanpham.value) {
+      document.querySelector("#vali_img").innerHTML =
+        "Vui lòng điền vào trường này";
+      document.getElementById("vali_img").style.display = "block";
+      i = false;
+    } else {
+      document.getElementById("vali_img").style.display = "none";
+      i = true;
+    }
+
+    if (!gia_sanpham.value) {
+      document.querySelector("#vali_price").innerHTML =
+        "Vui lòng điền vào trường này";
+      document.getElementById("vali_price").style.display = "block";
+      i = false;
+    } else {
+      document.getElementById("vali_price").style.display = "none";
+      i = true;
+    }
+
+    if (i == true) {
+      axios
+        .post("/products", data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      alert("Thêm thành công !");
+      window.location.href = "/admin/san-pham";
+    }
+  });
+</script>
+<!-- .content -->

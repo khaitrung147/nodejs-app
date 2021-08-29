@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>Tiến hành thanh toán</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Đơn hàng của bạn</span>
+                    <span id="index" class="badge badge-success badge-pill"></span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart"></tbody>
+                    </table>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Tổng tiền</span>
+                        <strong id="total"> </strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <h4 class="mb-3">Địa chỉ thanh toán</h4>
+                <form>
+                    <div class="mb-3">
+                        <label for="ten_nguoinhan">Họ và tên: </label>
+                        <input type="text" class="form-control" id="ten_nguoinhan" placeholder="Nguyễn Văn A" required />
+                        <div id="vali_name" class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="dia_chi">Địa chỉ nhận hàng</label>
+                        <input type="text" class="form-control" id="dia_chi" placeholder="1234 Tô Ký Q12" required />
+                        <div id="vali_add" class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="sdt">Số điện thoại nhận hàng</label>
+                        <input type="text" class="form-control" id="sdt" placeholder="0123456789" required />
+                        <div id="vali_phone" class="invalid-feedback"></div>
+                    </div>
+                    <!-- 
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="country">Country</label>
+                            <select class="custom-select d-block w-100" id="country" required>
+                  <option value="">Choose...</option>
+                  <option>United States</option>
+                </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="state">State</label>
+                            <select class="custom-select d-block w-100" id="state" required>
+                  <option value="">Choose...</option>
+                  <option>California</option>
+                </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="zip">Zip</label>
+                            <input type="text" class="form-control" id="zip" placeholder="" required />
+                            <div class="invalid-feedback">Zip code required.</div>
+                        </div>
+                    </div> -->
+                    <hr class="mb-4" />
+
+                    <h4 class="mb-3">Phương thức thanh toán</h4>
+
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required />
+                            <label class="custom-control-label" for="credit">Thanh toán khi nhận hàng</label
+                >
+              </div>
+            </div>
+            <hr class="mb-4" />
+            <button
+              class="btn btn-success btn-lg btn-block"
+              id="btn"
+              type="button"
+            >
+              Xác nhận thanh toán
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="../javascripts/checkout.js"></script>
+</html>

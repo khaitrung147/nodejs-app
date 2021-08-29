@@ -1,0 +1,757 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 15px;
+}
+
+header {
+    color: #fff;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.container {
+    width: 86%;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bg-main {
+    background-color: rgb(77, 138, 84);
+}
+
+.hotline {
+    width: 14%;
+    float: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hotline a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hotline a:hover {
+    color: rgb(33, 37, 41);
+}
+
+.line {
+    width: 30%;
+}
+
+.line ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line ul li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.line a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.box-menu ul.dropdown,
+.line ul .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.box-menu ul .dropdown-nav,
+.line ul .dropdown-nav {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 1%;
+}
+
+.box-menu ul .dropdown-nav a,
+.line ul .dropdown-nav a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+}
+
+.box-menu ul .dropdown-nav li:hover,
+.line ul .dropdown-nav li:hover {
+    background-color: #f1f1f1;
+}
+
+.box-menu ul li:hover .dropdown-nav,
+.line ul li:hover .dropdown-nav {
+    display: block;
+    position: absolute;
+}
+
+.box-menu .dropdown-nav .dropdown-li {
+    border-bottom: 1px solid #ebebeb;
+}
+
+
+/*het phan heder
+
+/*phan main
+/*menu*/
+
+.path {
+    display: block;
+    padding: 2% 0;
+}
+
+.path a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu {
+    padding: 1%;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.box-logo {
+    width: 40%;
+    float: left;
+}
+
+.box-logo img {
+    display: block;
+    margin: 0 auto;
+}
+
+.box-menu {
+    width: 30%;
+    float: left;
+}
+
+.box-menu ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-menu li {
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.box-menu a:hover {
+    color: rgb(77, 138, 84);
+    transition: 0.3s;
+}
+
+
+/*het menu*/
+
+
+/*banner*/
+
+.baner img {
+    width: 100%;
+}
+
+
+/*hetbanner*/
+
+
+/*danhmucsanpham*/
+
+.cata {
+    margin-bottom: 5%;
+}
+
+.title-cata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    padding: 5% 0;
+}
+
+.title-cata h2 {
+    position: relative;
+    font-size: 25px;
+}
+
+.title-cata h2:before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/title_base.png");
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 27px;
+    top: -7px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.cata-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 2% 0;
+    grid-column-gap: 2%;
+}
+
+.box-cata a {
+    text-decoration: none;
+    color: black;
+}
+
+.img-cata {
+    width: 100%;
+}
+
+.box-cata a:hover .img-cata img {
+    transform: scale(1.1, 1.1);
+    transition: 0.5s;
+}
+
+.box-cata a:hover .title-box h2 {
+    color: rgb(77, 138, 84);
+}
+
+.img-cata img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.title-box {
+    text-align: center;
+    font-size: 16px;
+}
+
+
+/*taisaochon*/
+
+.why {
+    background-image: url("../images/bg_why.jpg");
+    background-size: 150%;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+    color: #282828;
+}
+
+.article {
+    width: 48%;
+    overflow: auto;
+    padding: 6% 0;
+}
+
+.heading h2 {
+    position: relative;
+    font-size: 25px;
+}
+
+.heading p {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.09px;
+    line-height: 175%;
+    word-spacing: 1px;
+}
+
+.heading h2:before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/title_base.png");
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 27px;
+    top: -5px;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.body-why {
+    float: left;
+    width: 80%;
+    padding: 2% 0;
+}
+
+.img-why {
+    width: 11%;
+    float: left;
+}
+
+.text-why {
+    width: 84%;
+    float: right;
+}
+
+.text-title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.content-title {
+    display: block;
+    margin-top: 0.5vw;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+
+/*het phan tai sao chon*/
+
+
+/*menu hom nay*/
+
+.today {
+    color: #282828;
+    overflow: auto;
+    padding-bottom: 5%;
+}
+
+.menu-today {
+    width: 70%;
+    margin-top: 8%;
+    margin-bottom: 4%;
+}
+
+.menu-today h2 {
+    position: relative;
+    font-size: 25px;
+    text-align: center;
+}
+
+.menu-today h2:before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/title_base.png");
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 27px;
+    top: -7px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.choice-box {
+    display: block;
+    padding: 2% 5%;
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    color: #282828;
+}
+
+.choice-box:hover {
+    background-color: rgb(77, 138, 84);
+    color: white;
+    transition: 0.3s;
+}
+
+.special-choice {
+    background-color: rgb(77, 138, 84);
+    color: white;
+}
+
+.today-grid-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2%;
+    margin-bottom: 7%;
+}
+
+.today-box {
+    text-align: center;
+    padding: 5% 0;
+    text-decoration: none;
+    color: black;
+}
+
+.img-today {
+    overflow: hidden;
+    border: 1px solid rgb(225, 225, 225);
+}
+
+.img-today img {
+    transition: 0.3s;
+}
+
+.today-box img {
+    width: 100%;
+}
+
+.today-box span {
+    font-size: 18px;
+}
+
+.today-box h3 {
+    text-transform: uppercase;
+}
+
+.today-box:hover .img-today img {
+    transform: scale(1.1, 1.1);
+    transition: 0.3s;
+}
+
+
+/*Het phan menu hom nay*/
+
+.time {
+    position: relative;
+    display: block;
+    overflow: auto;
+}
+
+.box-time {
+    position: absolute;
+    top: 0;
+    width: 60%;
+    padding: 7% 0;
+    background-color: #4d8a54;
+    color: #fff;
+    z-index: 2;
+}
+
+.box-time span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.box-time a {
+    display: block;
+    width: 20%;
+    text-align: center;
+    margin-top: 5%;
+    padding: 2% 5%;
+    background-color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    color: rgb(77, 138, 84);
+}
+
+.box-time>.container {
+    position: relative;
+}
+
+.box-time h2:before {
+    z-index: 22;
+    content: "";
+    position: absolute;
+    background-image: url("../images/title_base_2.png");
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 27px;
+    top: -7px;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.img-time {
+    width: 49%;
+    position: absolute;
+    right: 0;
+    margin-top: 1.2vw;
+}
+
+.img-time img {
+    width: 100%;
+}
+
+
+/*tin tuc*/
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2%;
+}
+
+.box-news a {
+    display: grid;
+    grid-row-gap: 1%;
+    grid-template-rows: repeat(2, auto);
+}
+
+.img-news {
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-news img {
+    width: 100%;
+}
+
+.post-news {
+    text-align: left;
+    display: grid;
+    grid-template-rows: repeat(2, 80px);
+}
+
+.post-news h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.images-footer {
+    display: flex;
+    margin-top: 10vw;
+}
+
+.img {
+    float: left;
+    width: 20%;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*footer*/
+
+footer {
+    margin: 0;
+    background-image: url(../images/bg_footer.jpg);
+    overflow: auto;
+}
+
+.box-footer {
+    color: white;
+}
+
+.box-footer h2 {
+    color: #4d8a54;
+}
+
+.box-footer p {
+    line-height: 175%;
+}
+
+.info {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10%;
+}
+
+.info-box {
+    display: inline-flex;
+    margin: 2% 0;
+}
+
+.info-box i {
+    margin-right: 3%;
+}
+
+.icon {
+    margin-top: 7%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-register input {
+    padding: 4% 5%;
+    border: none;
+    border-radius: 50px;
+}
+
+.btn-register button {
+    padding: 4% 5%;
+    border: none;
+    border-radius: 50px;
+    background-color: #4d8a54;
+    color: white;
+}
+
+
+/*phan trang*/
+
+.pagination {
+    padding: 3% 0;
+}
+
+.pagination ul {
+    padding: 0;
+}
+
+.pagination ul li {
+    display: inline;
+}
+
+.pag-link {
+    border: solid 1px #ebebeb;
+    color: #282828;
+    text-decoration: none;
+    background-color: #f6f6f6;
+    padding: 0.5% 1.2%;
+    border-radius: 12%;
+    font-weight: 600;
+}
+
+.pag-link:hover,
+.active {
+    background-color: #4d8a54;
+    color: #f6f6f6;
+}
+
+
+/* Chi tiết sản phẩm */
+
+.detail_product {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    margin-bottom: 10%;
+}
+
+.main-img {
+    width: 85%;
+    outline: 1px solid #ebebeb;
+}
+
+.main-img img {
+    width: 100%;
+}
+
+.des {
+    font-style: italic;
+}
+
+.info-detail h2 {
+    text-transform: uppercase;
+}
+
+.price-detail {
+    font-size: 20px;
+}
+
+.price-detail span {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.quantity {
+    display: flex;
+    align-items: flex-end;
+}
+
+.quantity input {
+    text-align: center;
+    padding: 2% 0;
+    margin: 0;
+    width: 20%;
+    background: #ffffff;
+    border: 1px solid gainsboro;
+}
+
+.qtt_input {
+    margin-left: 5%;
+}
+
+.add_cart {
+    margin: 10% 0;
+}
+
+.add_to {
+    color: #4d8a54;
+    text-decoration: none;
+    padding: 2% 7%;
+    border-radius: 50px;
+    border: 1px solid #4d8a54;
+}
+
+.buy_now {
+    background: #4d8a54;
+    color: white;
+}
+
+.cart {
+    margin-bottom: 5%;
+}
+
+.cart_item {
+    width: 100%;
+    margin: 5% 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart_item img {
+    width: 100px;
+}
+
+.cart_item button,
+.cart_item input {
+    text-align: center;
+    padding: 3% 0;
+    margin: 0;
+    width: 20%;
+    background: #ffffff;
+    border: 1px solid gainsboro;
+    color: rgb(90, 90, 90);
+}
+
+.cart_item .price {
+    font-weight: bolder;
+    color: #4d8a54;
+}
+
+.total_price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.total_price>span {
+    color: #4d8a54;
+    font-weight: bolder;
+    margin: 0 3%;
+}
+
+.total_price a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    padding: 1.2% 4%;
+    margin: 0 1%;
+    border-radius: 50px;
+    background-color: #4d8a54;
+}

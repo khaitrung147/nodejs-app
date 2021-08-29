@@ -1,0 +1,77 @@
+.login {
+    font-weight: lighter;
+    width: 30%;
+    margin: 4% auto;
+    padding: 2%;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.397);
+}
+
+.login a {
+    color: black;
+    text-decoration: none;
+}
+
+.login a:hover {
+    color: rgb(77, 138, 84);
+}
+
+.form-group {
+    width: 100%;
+    margin: 5% 0;
+}
+
+.form-group input {
+    padding: 3% 2%;
+    width: 94%;
+    border: none;
+    border: 1px solid rgb(223, 223, 223);
+}
+
+.form-group input:focus {
+    outline: 0;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 3% 0;
+    border: none;
+    text-transform: uppercase;
+    background-color: rgb(77, 138, 84);
+    color: #f3f3f3;
+}
+
+.form-group button:hover {
+    background-color: white;
+    outline: rgb(77, 138, 84) solid 1px;
+    color: rgb(77, 138, 84);
+}
+
+.login-social {
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+.login-social a {
+    float: left;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    padding: 2% 10%;
+    margin: 0 5%;
+    justify-content: space-between;
+    color: white;
+}
+
+.login-social a:hover {
+    background-color: white;
+    outline: rgb(77, 138, 84) solid 1px;
+}
+
+.fb {
+    background-color: rgb(59, 89, 152);
+}
+
+.gg {
+    background-color: rgb(225, 75, 51);
+}

@@ -1,0 +1,117 @@
+<div class="breadcrumbs">
+    <div class="col-sm-4">
+        <div class="page-header float-left">
+            <div class="page-title">
+                <h1>Loại sản phẩm</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="page-header float-right">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Loại sản phẩm</a></li>
+                    <li class="active">Thêm mới</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Biểu mẫu</strong>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Loại sản phẩm</label>
+                                <input name="name" type="name" class="form-control" id="ten_loaisp" aria-describedby="" placeholder="Nhập tên loại sản phẩm" />
+                                <small class="form-text text-muted">Mã loại sản phẩm này sẽ được tự động khởi tạo</small
+                >
+                <div id="vali_name" class="invalid-feedback"></div>
+              </div>
+              <div class="form-group">
+                <label for="order">Thứ tự hiển thị</label>
+                <input
+                  name="order"
+                  type="number"
+                  min="1"
+                  max="10"
+                  class="form-control"
+                  id="thu_tu"
+                  placeholder="Nhập thứ tự sắp xếp"
+                />
+              </div>
+              <div id="vali_order" class="invalid-feedback"></div>
+              <div class="form-group">
+                <label for="showHide">Ẩn/ Hiện</label>
+                <select class="form-control" name="showHide" id="an_hien">
+                  <option value="1" selected>Hiện</option>
+                  <option value="0">Ẩn</option>
+                </select>
+              </div>
+              <button type="button" id="btn" class="btn btn-primary">
+                Thêm
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- .animated -->
+</div>
+<!-- .content -->
+<script>
+  var btn = document.querySelector("#btn");
+  btn.addEventListener("click", () => {
+    let ten_loaisp = document.getElementById("ten_loaisp");
+    let thu_tu = document.getElementById("thu_tu");
+    let an_hien = document.getElementById("an_hien");
+    var i;
+    if (!ten_loaisp.value) {
+      document.querySelector("#vali_name").innerHTML =
+        "Vui lòng điền vào trường này";
+      document.getElementById("vali_name").style.display = "block";
+      i = false;
+    } else {
+      document.getElementById("vali_name").style.display = "none";
+      i = true;
+    }
+
+    if (!thu_tu.value) {
+      document.querySelector("#vali_order").innerHTML =
+        "Vui lòng điền vào trường này";
+      document.getElementById("vali_order").style.display = "block";
+      i = false;
+    } else {
+      i = true;
+      document.getElementById("vali_order").style.display = "none";
+    }
+
+    if (i == true) {
+      let data = {
+        ten_loaisp: ten_loaisp.value,
+        thu_tu: thu_tu.value,
+        an_hien: an_hien.value,
+      };
+
+      axios
+        .post("/catalogs", data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      alert("Thêm thành công !");
+      window.location.href = "/admin/loai-san-pham";
+    }
+  });
+</script>
